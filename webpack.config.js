@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 
 module.exports = {
   entry: {
@@ -8,6 +9,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.css'
+    }),
+    new ExtraneousFileCleanupPlugin({
+      extensions: [ '.js' ],
+      minBytes: 4000 // Minimum bytes to keep
     })
   ],
   module: {
