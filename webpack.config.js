@@ -1,5 +1,8 @@
 module.exports = {
-  entry: './src/js/index.js',
+  entry: {
+    bundle: './src/js/index.js',
+    style: './src/css/style.css'
+  },
   module: {
     rules: [
       {
