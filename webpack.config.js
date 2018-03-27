@@ -4,7 +4,7 @@ const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plu
 module.exports = {
   entry: {
     bundle: './src/js/index.js',
-    style: './src/css/style.css'
+    style: './src/sass/style.scss'
   },
   plugins: [
     new MiniCssExtractPlugin({
