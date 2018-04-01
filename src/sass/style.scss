@@ -18,4 +18,10 @@ body {
       content: '';
     }
   }
+
+  .photo {
+    width: 200px;
+    height: 400px;
+    background: url(../../src/img/leaf.jpg) 50% 50% / cover no-repeat;
+  }
 }
