@@ -14,7 +14,7 @@ module.exports = {
     }),
     new ExtraneousFileCleanupPlugin({
       extensions: [ '.js' ],
-      minBytes: 4000 // Minimum bytes to keep
+      minBytes: 8000 // Minimum bytes to keep
     })
   ],
   module: {
