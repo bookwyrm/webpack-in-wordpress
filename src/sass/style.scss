@@ -9,5 +9,13 @@ body {
 
   h1 {
     font-size: 42px;
+
+    &::after {
+      display: inline-block;
+      height: 1em;
+      width: 1em;
+      background: url(../../src/img/clock.svg) 50% 50% / cover no-repeat;
+      content: '';
+    }
   }
 }
