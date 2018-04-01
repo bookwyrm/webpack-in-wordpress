@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   entry: {
@@ -29,6 +30,17 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          {
+            loader: 'postcss-loader', options: {
+              plugins() {
+                return [
+                  autoprefixer({
+                    browsers: ['last 2 versions']
+                  })
+                ]
+              }
+            }
+          },
           'sass-loader'
         ]
       }
