@@ -7,6 +7,7 @@ module.exports = {
     bundle: './src/js/index.js',
     style: './src/sass/style.scss'
   },
+  devtool: 'inline-source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.css'
@@ -29,9 +30,10 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          'css-loader?sourceMap=true',
           {
             loader: 'postcss-loader', options: {
+              sourceMap: true,
               plugins() {
                 return [
                   autoprefixer({
@@ -41,7 +43,7 @@ module.exports = {
               }
             }
           },
-          'sass-loader'
+          'sass-loader?sourceMap=true'
         ]
       }
     ]
