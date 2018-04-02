@@ -3,6 +3,7 @@ const common = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -30,7 +31,8 @@ module.exports = merge(common, {
                 return [
                   autoprefixer({
                     browsers: ['last 2 versions']
-                  })
+                  }),
+                  cssnano()
                 ]
               }
             }
