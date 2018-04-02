@@ -7,5 +7,20 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist'])
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
