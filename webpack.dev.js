@@ -1,16 +1,15 @@
+const merge = require('webpack-merge')
+const common = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 const autoprefixer = require('autoprefixer')
 
-module.exports = {
-  entry: {
-    bundle: './src/js/index.js',
-    style: './src/sass/style.scss'
-  },
+module.exports = merge(common, {
+  mode: 'development',
   devtool: 'inline-source-map',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'style-dev.css'
     }),
     new ExtraneousFileCleanupPlugin({
       extensions: [ '.js' ],
@@ -19,13 +18,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      },
       {
         test: /\.scss$/,
         use: [
@@ -59,4 +51,4 @@ module.exports = {
       }
     ]
   }
-};
+});
