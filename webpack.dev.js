@@ -13,7 +13,7 @@ module.exports = merge(common, {
     }),
     new ExtraneousFileCleanupPlugin({
       extensions: [ '.js' ],
-      minBytes: 8000 // Minimum bytes to keep
+      minBytes: 7000 // Minimum bytes to keep
     })
   ],
   module: {
