@@ -3,6 +3,7 @@ const common = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 const autoprefixer = require('autoprefixer')
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -14,7 +15,8 @@ module.exports = merge(common, {
     new ExtraneousFileCleanupPlugin({
       extensions: [ '.js' ],
       minBytes: 7000 // Minimum bytes to keep
-    })
+    }),
+    new LiveReloadPlugin()
   ],
   module: {
     rules: [
