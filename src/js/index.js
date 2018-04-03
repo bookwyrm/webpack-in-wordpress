@@ -1,14 +1,4 @@
-var cloneDeep = require('lodash.clonedeep');
-var a = {
-  b: [
-    'c',
-    {
-      d: [ 1, 2, 3 ]
-    }
-  ]
-};
-
-var aa = cloneDeep(a);
-console.log("a === aa? ", a === aa);
-console.log("index.js")
+import { cube } from './math.js';
+console.log("index.js");
+console.log("5 cubed is equal to " + cube(5));
 
