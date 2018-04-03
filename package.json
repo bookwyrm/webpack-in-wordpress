@@ -35,5 +35,8 @@
     "webpack-cli": "^2.0.13",
     "webpack-extraneous-file-cleanup-plugin": "git+https://github.com/bookwyrm/webpack-extraneous-file-cleanup-plugin.git#webpack4",
     "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "npm": "^5.8.0"
   }
 }
