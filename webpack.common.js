@@ -8,6 +8,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist'])
   ],
+  externals: {
+    jquery: 'jQuery'
+  },
   module: {
     rules: [
       {
